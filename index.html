@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johnson Projects</title>
+    <style>
+        #clock {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e8f5e9;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #66bb6a;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .form-container, .content-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="tel"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #66bb6a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5aaf5c;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2e7d32;
+            color: #fff;
+        }
+        footer img {
+            width: 30px;
+            margin-top: 10px;
+        }
+        body {
+      margin: 0;
+      background-color: #f0f8ff; /* Light blue background */
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('OIP.jpeg') no-repeat center center fixed; /* Replace 'background-image.jpg' with your image file */
+      background-size: cover; /* Ensures the background covers the entire page */
+      color: lightseagreen; /* Text color for better visibility */
+    }
+    .logo-background {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: lightblue;
+      font-size: 20vw;
+      font-weight: bold;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .mini-logo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: lightblue;
+      font-size: 3vw;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 20px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Johnson Projects</h1>
+        <p>Connecting the world, one project at a time.</p>
+    </header>
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+    <div class="form-container">
+        <form id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            
+            <button type="button" onclick="redirectToWhatsApp()">Submit</button>
+        </form>
+    </div>
+
+    <div class="content-container">
+        <h2>How to Install Windows 10 and Windows 11</h2>
+        <p><b>Step 1:</b> Download the official Windows ISO file from the Microsoft website.</p>
+        <p><b>Step 2:</b> Create a bootable USB drive using tools like Rufus or Microsoft's Media Creation Tool.</p>
+        <p><b>Step 3:</b> Insert the bootable USB drive into your computer and restart it. Enter the BIOS/UEFI settings (usually by pressing F2, F10, or DEL during startup) and set the USB drive as the primary boot device.</p>
+        <p><b>Step 4:</b> Follow the on-screen instructions to install Windows. Select the partition where you want to install the operating system.</p>
+        <p><b>Step 5:</b> After installation, complete the initial setup by creating your user account and choosing your preferences.</p>
+
+        <h2>How to Update Windows</h2>
+        <p><b>Step 1:</b> Open the <b>Settings</b> menu by clicking on the Start menu and selecting <b>Settings</b>.</p>
+        <p><b>Step 2:</b> Navigate to <b>Update & Security</b> and click on <b>Windows Update</b>.</p>
+        <p><b>Step 3:</b> Click on <b>Check for updates</b> to see if there are any available updates for your system.</p>
+        <p><b>Step 4:</b> If updates are available, click <b>Download and Install</b>. Your system may restart during the update process.</p>
+    </div>
+        <div class="logo-background">JP</div>
+  <div class="mini-logo">JP</div>
+  <div class="content">
+    </div>
+    <footer>
+        <p>© 2025 Johnson Projects. All rights reserved.</p>
+        <p>Follow JPROJECTS:</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+        <p>Designed by Johnson Projects</p>
+    </footer>
+
+    <script>
+        function redirectToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            if (name && phone) {
+                const whatsappURL = `https://wa.me/?text=Hello, my name is ${encodeURIComponent(name)} and my phone number is ${encodeURIComponent(phone)}.`;
+                window.location.href = whatsappURL;
+            } else {
+                alert("Please fill in both your name and phone number!");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
